@@ -33,7 +33,7 @@ export default function Component() {
 		{
 			id: "2",
 			time: "13:30-13:45",
-			speaker: "荒川 奏良",
+			speaker: "荒川奏良",
 			title: "ポスト・パソコン時代のジャンク遊び Android端末編",
 			description: "オンボロなAndroid端末の活用テクニックを紹介。",
       twitter: "",
