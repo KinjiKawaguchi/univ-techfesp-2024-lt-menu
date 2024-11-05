@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Clock, Calendar } from "lucide-react";
+import { Clock, Calendar, Twitter } from "lucide-react";
 
 export default function Component() {
 	const [mounted, setMounted] = useState(false);
@@ -20,6 +20,7 @@ export default function Component() {
 			title: "OSINT(オープンソースインテリジェンス)ってなんですか？",
 			description:
 				"OSINTの概要、背景知識、技術・ツールについて具体例を交えて紹介。",
+      twitter: "",
 		},
 		{
 			id: "1",
@@ -27,6 +28,7 @@ export default function Component() {
 			speaker: "中優樹",
 			title: "メーカーでみる設備からくり時計の世界",
 			description: "各メーカーの特徴や代表作を、実際の映像とともに紹介。",
+      twitter: "",
 		},
 		{
 			id: "2",
@@ -34,6 +36,7 @@ export default function Component() {
 			speaker: "荒川 奏良",
 			title: "ポスト・パソコン時代のジャンク遊び Android端末編",
 			description: "オンボロなAndroid端末の活用テクニックを紹介。",
+      twitter: "",
 		},
 		{
 			id: "3",
@@ -41,6 +44,7 @@ export default function Component() {
 			speaker: "齊藤遼太",
 			title: "生のコンピュータの世界",
 			description: "C言語から始まる様々な抽象化レイヤについて学ぶ。",
+      twitter: "",
 		},
 		{
 			id: "4",
@@ -48,6 +52,7 @@ export default function Component() {
 			speaker: "馬場海好",
 			title: "プログラミング初心者だった私が技術に魅了されるまで",
 			description: "情報学部での4年間で技術を好きになるまでの過程を紹介。",
+      twitter: "https://twitter.com/lovelovetrb",
 		},
 		{
 			id: "5",
@@ -55,6 +60,7 @@ export default function Component() {
 			speaker: "前川悠稀",
 			title: "再利用ロケットの現状と今後",
 			description: "SpaceX社を中心に再利用ロケットの現状と今後の予想を紹介。",
+      twitter: "",
 		},
 		{
 			id: "6",
@@ -62,6 +68,7 @@ export default function Component() {
 			speaker: "片岩拓也",
 			title: "言葉を操る機械",
 			description: "言葉を計算可能にする仕組みと簡単な言語埋め込みを紹介。",
+      twitter: "",
 		},
 	];
 
@@ -118,9 +125,14 @@ export default function Component() {
 									{talk.title}
 								</h2>
 								<div
-									className={`text-md font-medium ${isDarkMode ? "text-gray-300" : "text-gray-800"} mb-2`}
+									className={`text-md font-medium ${isDarkMode ? "text-gray-300" : "text-gray-800"} mb-2 flex items-center`}
 								>
 									{talk.speaker}
+                  {talk.twitter && (
+                    <a href={talk.twitter} target="_blank" className="ml-2">
+                      <Twitter className="w-4 h-4" />
+                    </a>
+                  )}
 								</div>
 								<p className={isDarkMode ? "text-gray-400" : "text-gray-600"}>
 									{talk.description}
